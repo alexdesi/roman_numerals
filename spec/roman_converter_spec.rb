@@ -27,7 +27,16 @@ describe RomanConverter do
     expect(RomanConverter.to_roman(4)).to eq('IV')
   end
 
+  it 'converts 10 to X' do
+    expect(RomanConverter.to_roman(10)).to eq('X')
+  end
+
+  it 'converts 20 to XX' do
+    expect(RomanConverter.to_roman(20)).to eq('XX')
+  end
+
   # TODO:
   # 9 -> IX
-  # 10 -> X
+  # 40 -> XL
+  # 50 -> L
 end

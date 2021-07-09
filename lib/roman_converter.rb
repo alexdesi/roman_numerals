@@ -1,15 +1,16 @@
 class RomanConverter
   def self.to_roman(decimal)
-    result = ''
-    if decimal >= 5
-      result = 'V'
-      decimal -= 5
+    tens, ones = decimal.divmod(10)
+    roman = 'X' * tens
+    if ones >= 5
+      roman = 'V'
+      ones -= 5
     end
-    if decimal >= 4
-      result = 'IV'
-      decimal -= 4
+    if ones >= 4
+      roman = 'IV'
+      ones -= 4
     end
-    result += 'I' * decimal
-    result
+    roman += 'I' * ones
+    roman
   end
 end
